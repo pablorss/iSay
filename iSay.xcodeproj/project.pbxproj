@@ -1,0 +1,420 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6E27FC671AA6C0D600C047DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E27FC661AA6C0D600C047DD /* AppDelegate.swift */; };
+		6E27FC691AA6C0D600C047DD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E27FC681AA6C0D600C047DD /* ViewController.swift */; };
+		6E27FC6C1AA6C0D600C047DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E27FC6A1AA6C0D600C047DD /* Main.storyboard */; };
+		6E27FC6E1AA6C0D600C047DD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E27FC6D1AA6C0D600C047DD /* Images.xcassets */; };
+		6E27FC711AA6C0D600C047DD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E27FC6F1AA6C0D600C047DD /* LaunchScreen.xib */; };
+		6E27FC7D1AA6C0D600C047DD /* iSayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E27FC7C1AA6C0D600C047DD /* iSayTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6E27FC771AA6C0D600C047DD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6E27FC591AA6C0D500C047DD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6E27FC601AA6C0D500C047DD;
+			remoteInfo = iSay;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		6E27FC611AA6C0D500C047DD /* iSay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iSay.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E27FC651AA6C0D500C047DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6E27FC661AA6C0D600C047DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6E27FC681AA6C0D600C047DD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6E27FC6B1AA6C0D600C047DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6E27FC6D1AA6C0D600C047DD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		6E27FC701AA6C0D600C047DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		6E27FC761AA6C0D600C047DD /* iSayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iSayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E27FC7B1AA6C0D600C047DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6E27FC7C1AA6C0D600C047DD /* iSayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iSayTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6E27FC5E1AA6C0D500C047DD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6E27FC731AA6C0D600C047DD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6E27FC581AA6C0D500C047DD = {
+			isa = PBXGroup;
+			children = (
+				6E27FC631AA6C0D500C047DD /* iSay */,
+				6E27FC791AA6C0D600C047DD /* iSayTests */,
+				6E27FC621AA6C0D500C047DD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6E27FC621AA6C0D500C047DD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6E27FC611AA6C0D500C047DD /* iSay.app */,
+				6E27FC761AA6C0D600C047DD /* iSayTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6E27FC631AA6C0D500C047DD /* iSay */ = {
+			isa = PBXGroup;
+			children = (
+				6E27FC661AA6C0D600C047DD /* AppDelegate.swift */,
+				6E27FC681AA6C0D600C047DD /* ViewController.swift */,
+				6E27FC6A1AA6C0D600C047DD /* Main.storyboard */,
+				6E27FC6D1AA6C0D600C047DD /* Images.xcassets */,
+				6E27FC6F1AA6C0D600C047DD /* LaunchScreen.xib */,
+				6E27FC641AA6C0D500C047DD /* Supporting Files */,
+			);
+			path = iSay;
+			sourceTree = "<group>";
+		};
+		6E27FC641AA6C0D500C047DD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6E27FC651AA6C0D500C047DD /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6E27FC791AA6C0D600C047DD /* iSayTests */ = {
+			isa = PBXGroup;
+			children = (
+				6E27FC7C1AA6C0D600C047DD /* iSayTests.swift */,
+				6E27FC7A1AA6C0D600C047DD /* Supporting Files */,
+			);
+			path = iSayTests;
+			sourceTree = "<group>";
+		};
+		6E27FC7A1AA6C0D600C047DD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6E27FC7B1AA6C0D600C047DD /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6E27FC601AA6C0D500C047DD /* iSay */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6E27FC801AA6C0D600C047DD /* Build configuration list for PBXNativeTarget "iSay" */;
+			buildPhases = (
+				6E27FC5D1AA6C0D500C047DD /* Sources */,
+				6E27FC5E1AA6C0D500C047DD /* Frameworks */,
+				6E27FC5F1AA6C0D500C047DD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iSay;
+			productName = iSay;
+			productReference = 6E27FC611AA6C0D500C047DD /* iSay.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6E27FC751AA6C0D600C047DD /* iSayTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6E27FC831AA6C0D600C047DD /* Build configuration list for PBXNativeTarget "iSayTests" */;
+			buildPhases = (
+				6E27FC721AA6C0D600C047DD /* Sources */,
+				6E27FC731AA6C0D600C047DD /* Frameworks */,
+				6E27FC741AA6C0D600C047DD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6E27FC781AA6C0D600C047DD /* PBXTargetDependency */,
+			);
+			name = iSayTests;
+			productName = iSayTests;
+			productReference = 6E27FC761AA6C0D600C047DD /* iSayTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6E27FC591AA6C0D500C047DD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Pablo Robles Sánchez";
+				TargetAttributes = {
+					6E27FC601AA6C0D500C047DD = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					6E27FC751AA6C0D600C047DD = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = 6E27FC601AA6C0D500C047DD;
+					};
+				};
+			};
+			buildConfigurationList = 6E27FC5C1AA6C0D500C047DD /* Build configuration list for PBXProject "iSay" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6E27FC581AA6C0D500C047DD;
+			productRefGroup = 6E27FC621AA6C0D500C047DD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6E27FC601AA6C0D500C047DD /* iSay */,
+				6E27FC751AA6C0D600C047DD /* iSayTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6E27FC5F1AA6C0D500C047DD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E27FC6C1AA6C0D600C047DD /* Main.storyboard in Resources */,
+				6E27FC711AA6C0D600C047DD /* LaunchScreen.xib in Resources */,
+				6E27FC6E1AA6C0D600C047DD /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6E27FC741AA6C0D600C047DD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6E27FC5D1AA6C0D500C047DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E27FC691AA6C0D600C047DD /* ViewController.swift in Sources */,
+				6E27FC671AA6C0D600C047DD /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6E27FC721AA6C0D600C047DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E27FC7D1AA6C0D600C047DD /* iSayTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6E27FC781AA6C0D600C047DD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6E27FC601AA6C0D500C047DD /* iSay */;
+			targetProxy = 6E27FC771AA6C0D600C047DD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		6E27FC6A1AA6C0D600C047DD /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6E27FC6B1AA6C0D600C047DD /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6E27FC6F1AA6C0D600C047DD /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6E27FC701AA6C0D600C047DD /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6E27FC7E1AA6C0D600C047DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		6E27FC7F1AA6C0D600C047DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6E27FC811AA6C0D600C047DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = iSay/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		6E27FC821AA6C0D600C047DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = iSay/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		6E27FC841AA6C0D600C047DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = iSayTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iSay.app/iSay";
+			};
+			name = Debug;
+		};
+		6E27FC851AA6C0D600C047DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = iSayTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iSay.app/iSay";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6E27FC5C1AA6C0D500C047DD /* Build configuration list for PBXProject "iSay" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6E27FC7E1AA6C0D600C047DD /* Debug */,
+				6E27FC7F1AA6C0D600C047DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6E27FC801AA6C0D600C047DD /* Build configuration list for PBXNativeTarget "iSay" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6E27FC811AA6C0D600C047DD /* Debug */,
+				6E27FC821AA6C0D600C047DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		6E27FC831AA6C0D600C047DD /* Build configuration list for PBXNativeTarget "iSayTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6E27FC841AA6C0D600C047DD /* Debug */,
+				6E27FC851AA6C0D600C047DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6E27FC591AA6C0D500C047DD /* Project object */;
+}

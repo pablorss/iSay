@@ -12,7 +12,7 @@ class ViewController: UIViewController {
 
     @IBAction func facebookLogin(sender: AnyObject) {
         
-        var permissionsArray : NSArray = [ "user_about_me", "user_relationships", "user_birthday", "user_location"];
+        var permissionsArray : NSArray = [ "user_about_me", "user_relationships", "user_birthday", "user_location", "user_friends"];
         
         // Login PFUser using Facebook
         var login = PFFacebookUtils.logInWithPermissions(permissionsArray, block: { (user : PFUser!, error : NSError!) -> Void in
@@ -49,6 +49,17 @@ class ViewController: UIViewController {
 
         
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        /*if(PFUser.currentUser().isAuthenticated() && PFFacebookUtils.isLinkedWithUser(PFUser.currentUser())) {
+            self.performSegueWithIdentifier("login", sender: self);
+        }
+        else {
+        
+        }*/
+        
     }
 
     override func didReceiveMemoryWarning() {

@@ -29,6 +29,8 @@
 		6E27FCA51AA6E00800C047DD /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E27FCA41AA6E00800C047DD /* ParseFacebookUtils.framework */; };
 		6E27FCA71AA6E01D00C047DD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E27FCA61AA6E01D00C047DD /* UIKit.framework */; };
 		6E27FCA91AA6E4C500C047DD /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E27FCA81AA6E4C500C047DD /* FacebookSDK.framework */; };
+		6E64003E1AB6A08A00688B88 /* MenuPartidasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E64003D1AB6A08A00688B88 /* MenuPartidasViewController.swift */; };
+		6E6400401AB6A3C000688B88 /* SeleccionarAmigoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E64003F1AB6A3C000688B88 /* SeleccionarAmigoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,8 @@
 		6E27FCA41AA6E00800C047DD /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
 		6E27FCA61AA6E01D00C047DD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		6E27FCA81AA6E4C500C047DD /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
+		6E64003D1AB6A08A00688B88 /* MenuPartidasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuPartidasViewController.swift; sourceTree = "<group>"; };
+		6E64003F1AB6A3C000688B88 /* SeleccionarAmigoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeleccionarAmigoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,7 +133,9 @@
 			children = (
 				6E27FC661AA6C0D600C047DD /* AppDelegate.swift */,
 				6E27FC681AA6C0D600C047DD /* ViewController.swift */,
+				6E64003D1AB6A08A00688B88 /* MenuPartidasViewController.swift */,
 				6E27FC6A1AA6C0D600C047DD /* Main.storyboard */,
+				6E64003F1AB6A3C000688B88 /* SeleccionarAmigoView.swift */,
 				6E27FC6D1AA6C0D600C047DD /* Images.xcassets */,
 				6E27FC6F1AA6C0D600C047DD /* LaunchScreen.xib */,
 				6E27FC641AA6C0D500C047DD /* Supporting Files */,
@@ -287,6 +293,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E27FC691AA6C0D600C047DD /* ViewController.swift in Sources */,
+				6E6400401AB6A3C000688B88 /* SeleccionarAmigoView.swift in Sources */,
+				6E64003E1AB6A08A00688B88 /* MenuPartidasViewController.swift in Sources */,
 				6E27FC671AA6C0D600C047DD /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -492,6 +500,7 @@
 				6E27FC821AA6C0D600C047DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6E27FC831AA6C0D600C047DD /* Build configuration list for PBXNativeTarget "iSayTests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +509,7 @@
 				6E27FC851AA6C0D600C047DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

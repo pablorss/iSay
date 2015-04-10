@@ -13,7 +13,9 @@ class MenuPartidasViewController: UITableViewController {
     @IBAction func crearNuevaPartida(sender: AnyObject) {
         
     }
-
+    
+    var data : [NSDictionary] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,9 +25,43 @@ class MenuPartidasViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
-        //DEBE HACER UN QUERIE A PARSE PARA JALAR LAS PARTIDAS ACTIVAS
+        //Hacer querie de la información de facebook y almacenarlo en Parse
+        //facebookFriends()
     }
-
+    
+    func guardarAmigosEnParse(){
+        
+    }
+    
+    func facebookFriends() {
+        var friendsRequest : FBRequest = FBRequest.requestForMyFriends()
+        friendsRequest.startWithCompletionHandler{(connection:FBRequestConnection!, result:AnyObject!, error:NSError!) -> Void in
+            var resultdict = result as NSDictionary
+            println("Result Dict: \(resultdict)")
+            var data  = resultdict.objectForKey("data") as NSArray
+            println(data)
+            var i = 0
+            while (i < data.count) {
+                let valueDict : NSDictionary = data[i] as NSDictionary
+                //let nodo : NSDictionary = [] as NSDictionary
+                let id = valueDict.objectForKey("id") as NSString
+                let name = valueDict.objectForKey("name") as NSString
+                //self.data.append(nodo)
+                println(data[i])
+                //Editar información de la lista
+                println("the id value is \(id)")
+                i++
+            }
+            //self.friends! = resultdict.objectForKey("data") as NSDictionary
+            //friends = NSArray.arrayByAddingObjectsFromArray(resultdict.objectForKey("data")) as NSArray
+            //friends?.arrayByAddingObject(resultdict.objectForKey("data"))
+            //println("Found \(self.friends!.count) friends")
+            //println(self.friends![0])
+            //self.registros = self.friends!.count
+            //println(self.friends!)
+            self.tableView.reloadData()
+        }
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

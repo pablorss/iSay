@@ -9,7 +9,10 @@
 import UIKit
 
 class SeleccionarAmigoView: UITableViewController {
-
+    //var friends : NSDictionary!
+    //var registros : Int!
+    var names : [String] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,24 +23,53 @@ class SeleccionarAmigoView: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
         //JALA LOS AMIGOS DE FACEBOOK PARA INVITAR A JUGAR
+        facebookFriends()
+    }
+    
+    /*func logInViewController(logInController: PFLogInViewController!, didLogInUser user: PFUser!) -> Void
+    {
+        FBRequestConnection.startForMeWithCompletionHandler({connection, result, error in
+            if (!error)
+            {
+                PFUser.currentUser().setObject(result.id as? String, forKey: "fbId")
+                PFUser.currentUser().saveInBackground()
+            }
+            else
+            {
+                println("Error")
+            }
+        })
+    }*/
+
+    func facebookFriends() {
         var friendsRequest : FBRequest = FBRequest.requestForMyFriends()
         friendsRequest.startWithCompletionHandler{(connection:FBRequestConnection!, result:AnyObject!, error:NSError!) -> Void in
             var resultdict = result as NSDictionary
             println("Result Dict: \(resultdict)")
-            var data : NSArray = resultdict.objectForKey("data") as NSArray
+            var data  = resultdict.objectForKey("data") as NSArray
+            println(data)
             var i = 0
             while (i < data.count) {
                 let valueDict : NSDictionary = data[i] as NSDictionary
-                let id = valueDict.objectForKey("id") as String
+                let id = valueDict.objectForKey("id") as NSString
+                let name = valueDict.objectForKey("name") as NSString
+                self.names.append(name)
+                println(data[i])
+                //Editar información de la lista
                 println("the id value is \(id)")
                 i++
             }
-            
-            var friends = resultdict.objectForKey("data") as NSArray
-            println("Found \(friends.count) friends")
+            //self.friends! = resultdict.objectForKey("data") as NSDictionary
+            //friends = NSArray.arrayByAddingObjectsFromArray(resultdict.objectForKey("data")) as NSArray
+            //friends?.arrayByAddingObject(resultdict.objectForKey("data"))
+            //println("Found \(self.friends!.count) friends")
+            //println(self.friends![0])
+            //self.registros = self.friends!.count
+            //println(self.friends!)
+            self.tableView.reloadData()
         }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -48,24 +80,25 @@ class SeleccionarAmigoView: UITableViewController {
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 0
+        //return self.friends!.count
+        return self.names.count
     }
 
-    /*
+  
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as UITableViewCell
 
         // Configure the cell...
-
+        cell.textLabel?.text = self.names[indexPath.row]
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.

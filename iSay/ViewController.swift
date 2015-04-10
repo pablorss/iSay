@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBAction func facebookLogin(sender: AnyObject) {
+        @IBAction func facebookLogin(sender: AnyObject) {
         
         var permissionsArray : NSArray = [ "user_about_me", "user_relationships", "user_birthday", "user_location", "user_friends"];
         
@@ -32,17 +32,35 @@ class ViewController: UIViewController {
             } else {
                 if (user.isNew) {
                     NSLog("User with facebook signed up and logged in!");
-                    //[self performSegueWithIdentifier: "login" sender: self];
+                    FBRequestConnection.startForMeWithCompletionHandler({connection, result, error in
+                        //var user = PFUser.currentUser()
+                        var resultdict = result as NSDictionary
+                        var id = resultdict.objectForKey("id") as String
+                        var name = resultdict.objectForKey("name") as String
+                        var user = PFUser()
+                        user.setObject(name, forKey: "nombre")
+                        user.setObject(id, forKey: "idFacebook")
+                        var faceData = PFObject(className: "FacebookData")
+                        faceData["nombre"] = name
+                        faceData["idFacebook"] = id
+                        faceData["usuario"] = PFUser.currentUser().username
+                        user.saveInBackground()
+                        faceData.saveInBackground()
+                    })
+                    //let defaults = NSUserDefaults.standardUserDefaults()
+                    //defaults.setBool(true,forKey:"signedup")
                     self.performSegueWithIdentifier("login", sender: self)
+
                 } else {
                     NSLog("User with facebook logged in!");
-                    //[self performSegueWithIdentifier: "login" sender: self];
                     self.performSegueWithIdentifier("login", sender: self)
                 }
             } })
-        
+    }
+    
+    func saveUser(callback: ([PFObject]!, NSError!) -> ()) {
+       
 
-        
     }
     override func viewDidLoad() {
         super.viewDidLoad()

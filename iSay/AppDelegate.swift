@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         Parse.enableLocalDatastore()
-        Parse.setApplicationId("e7UsUyO0sODETm0ZnGOwJH9gu1KvgAlGtJdgX5FB", clientKey: "HvH692Lo9jszzKJeGMcIvNnck9mntoNPyxAejGDf")
+        Parse.setApplicationId("7xmPwtPq6QpAcybaSoAxdxCKVCwNGGo8o7dbLoLF", clientKey: "kmKwKx2dyPFiMZEnv20Bo310AjfeitwVrPTu8XZI")
         
         PFFacebookUtils.initializeFacebook()
         

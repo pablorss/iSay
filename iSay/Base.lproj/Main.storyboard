@@ -13,11 +13,11 @@
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l25-8z-KvX">
-                                <rect key="frame" x="126" y="269" width="68" height="30"/>
+                                <rect key="frame" x="153" y="319" width="68" height="30"/>
                                 <state key="normal" title="Facebook">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -27,7 +27,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="iSay" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hec-hf-GLr">
-                                <rect key="frame" x="144" y="85" width="33" height="21"/>
+                                <rect key="frame" x="171" y="85" width="33" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -40,6 +40,7 @@
                             <constraint firstAttribute="centerY" secondItem="l25-8z-KvX" secondAttribute="centerY" id="ux8-Ui-uDQ"/>
                         </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
@@ -50,15 +51,18 @@
             <objects>
                 <tableViewController id="ec6-DH-wfG" customClass="MenuPartidasViewController" customModule="iSay" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="FnR-qM-AKs">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" id="NiS-rT-b2R">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="reuseIdentifier" id="NiS-rT-b2R">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NiS-rT-b2R" id="MHN-ce-QYM">
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="Fvl-Ga-oe8" kind="push" id="s4q-GO-neZ"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -88,10 +92,63 @@
                         <viewControllerLayoutGuide type="bottom" id="vkf-M3-m6D"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="rk9-vf-M1k">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x86-m6-nVi">
+                                <rect key="frame" x="0.0" y="64" width="185" height="185"/>
+                                <color key="backgroundColor" red="1" green="0.037066020673091282" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="oprimiRojo:" destination="Fvl-Ga-oe8" eventType="touchDown" id="HCq-aQ-mGE"/>
+                                    <action selector="solteRojo:" destination="Fvl-Ga-oe8" eventType="touchUpInside" id="FRI-se-kdA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S3V-Ad-9yo">
+                                <rect key="frame" x="0.0" y="255" width="185" height="185"/>
+                                <color key="backgroundColor" red="0.024988165874118895" green="0.081828687393511346" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="oprimiAzul:" destination="Fvl-Ga-oe8" eventType="touchDown" id="bWR-3E-CFh"/>
+                                    <action selector="solteAzul:" destination="Fvl-Ga-oe8" eventType="touchUpInside" id="Qjy-m2-Euk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SP4-ng-8xY">
+                                <rect key="frame" x="190" y="255" width="185" height="185"/>
+                                <color key="backgroundColor" red="1" green="0.93968463601874563" blue="0.035122367110289821" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="oprimiAmarillo:" destination="Fvl-Ga-oe8" eventType="touchDown" id="Yuw-nM-YkD"/>
+                                    <action selector="solteAmarillo:" destination="Fvl-Ga-oe8" eventType="touchUpInside" id="JvY-Bl-OVw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q0O-Oo-tmi">
+                                <rect key="frame" x="190" y="64" width="185" height="185"/>
+                                <color key="backgroundColor" red="0.15547912856265986" green="0.8434738005050505" blue="0.061728898493015008" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="oprimiVerde:" destination="Fvl-Ga-oe8" eventType="touchDown" id="hGq-Mk-yOt"/>
+                                    <action selector="solteVerde:" destination="Fvl-Ga-oe8" eventType="touchUpInside" id="FTv-Gp-u9e"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="c1V-fY-vkE"/>
+                    <connections>
+                        <outlet property="botonAmarillo" destination="SP4-ng-8xY" id="J61-rg-kDa"/>
+                        <outlet property="botonAzul" destination="S3V-Ad-9yo" id="4V1-Gh-aXD"/>
+                        <outlet property="botonRojo" destination="x86-m6-nVi" id="WNB-Cn-Kj0"/>
+                        <outlet property="botonVerde" destination="q0O-Oo-tmi" id="pps-AR-K0E"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XH2-Xy-jnD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -102,7 +159,7 @@
             <objects>
                 <tableViewController id="1Ow-n2-tgo" customClass="SeleccionarAmigoView" customModule="iSay" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="lgC-28-IjH">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -165,7 +222,7 @@
             <objects>
                 <tableViewController id="UhE-Gp-TJE" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="mJw-4i-45P">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>

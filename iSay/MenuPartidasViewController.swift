@@ -10,9 +10,7 @@ import UIKit
 
 class MenuPartidasViewController: UITableViewController {
     
-    @IBAction func crearNuevaPartida(sender: AnyObject) {
-        
-    }
+
     
     var data : [NSDictionary] = []
     var partidasAmigos : [String] = []
@@ -95,6 +93,9 @@ class MenuPartidasViewController: UITableViewController {
         return cell
     }
     
+     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        //self.navigationController?.pushViewController(<#viewController: UIViewController#>, animated: <#Bool#>)
+    }
     
     /*
     // Override to support conditional editing of the table view.

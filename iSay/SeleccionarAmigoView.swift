@@ -137,8 +137,9 @@ class SeleccionarAmigoView: UITableViewController {
         if(self.estaEncontrada){
             var partida = PFObject(className: "Partidas")
             partida["estaActiva"] = false
-            println(partida)
-            println(partida.objectId)
+            partida["primeraVez"] = true
+            partida["turno"] = idplayer1
+            partida["movimientos"] = 4
             partida.save()
 
             println(partida.objectId)

@@ -15,6 +15,7 @@ class MenuPartidasViewController: UITableViewController {
     var data : [NSDictionary] = []
     var partidasAmigos : [String] = []
     var nombresAmigos : [String] = []
+    var idMio : String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,8 +45,9 @@ class MenuPartidasViewController: UITableViewController {
             }
             //println(self.partidasAmigos)
             self.tableView.reloadData()
+            println(self.partidasAmigos)
         }
-        //self.llenarTabla()
+        self.llenarTabla()
         
     }
     
@@ -53,12 +55,10 @@ class MenuPartidasViewController: UITableViewController {
         var user = PFQuery(className: "FacebookData")
         user.whereKey("usuario", equalTo: PFUser.currentUser().username)
         let r = user.findObjects()
-        var id = r[0].objectForKey("idFacebook") as String
-        println("El id es: %", &id)
+        self.idMio = r[0].objectForKey("idFacebook") as String
         var query = PFQuery(className: "Registro")
-        query.whereKey("username", equalTo: id)
+        query.whereKey("username", equalTo: self.idMio)
         let r2 = query.findObjects()
-        println(r2)
         
     }
     
@@ -132,14 +132,22 @@ class MenuPartidasViewController: UITableViewController {
     }
     */
     
-    /*
+    
     // MARK: - Navigation
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+        if segue.identifier == "juego" {
+            let detalleJuego = segue.destinationViewController as JuegoViewController
+            let indiceActual = self.tableView.indexPathForSelectedRow()
+            let row = indiceActual?.row
+            let idContrincante = self.partidasAmigos[row!]
+            detalleJuego.idMio = self.idMio
+            detalleJuego.idContrincante = idContrincante
+        }
     }
-    */
+    
     
 }

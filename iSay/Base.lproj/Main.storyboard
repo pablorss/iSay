@@ -61,7 +61,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="Fvl-Ga-oe8" kind="push" id="s4q-GO-neZ"/>
+                                    <segue destination="Fvl-Ga-oe8" kind="push" identifier="juego" id="s4q-GO-neZ"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

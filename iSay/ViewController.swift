@@ -46,22 +46,22 @@ class ViewController: UIViewController {
                         faceData["usuario"] = PFUser.currentUser().username
                         user.saveInBackground()
                         faceData.saveInBackground()
+                        //var timer = NSTimer.scheduledTimerWithTimeInterval(0.4, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
+                        sleep(3)
+                        self.performSegueWithIdentifier("login", sender: self)
                     })
                     //let defaults = NSUserDefaults.standardUserDefaults()
                     //defaults.setBool(true,forKey:"signedup")
-                    self.performSegueWithIdentifier("login", sender: self)
+
 
                 } else {
                     NSLog("User with facebook logged in!");
-                    self.performSegueWithIdentifier("login", sender: self)
+                    //self.performSegueWithIdentifier("login", sender: self)
                 }
             } })
     }
     
-    func saveUser(callback: ([PFObject]!, NSError!) -> ()) {
-       
 
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
 

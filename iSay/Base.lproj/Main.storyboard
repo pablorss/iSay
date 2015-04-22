@@ -23,7 +23,7 @@
                                 </state>
                                 <connections>
                                     <action selector="facebookLogin:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="4Vb-xe-7qw"/>
-                                    <segue destination="CsT-2Z-uY5" kind="modal" identifier="login" id="XyQ-qC-d3S"/>
+                                    <segue destination="CsT-2Z-uY5" kind="modal" identifier="login" id="PFe-QO-KRZ"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="iSay" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hec-hf-GLr">
@@ -202,6 +202,7 @@
         <scene sceneID="NYF-3e-4lm">
             <objects>
                 <tabBarController id="CsT-2Z-uY5" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="j98-oP-Au4"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="vMe-b4-Re3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>

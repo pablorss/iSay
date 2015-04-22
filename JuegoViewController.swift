@@ -57,21 +57,33 @@ class JuegoViewController: UIViewController {
     @IBAction func oprimiRojo(sender: AnyObject) {
         self.botonRojo.backgroundColor = UIColor.whiteColor()
         self.juegoLocal.append("rojo")
+        if self.primeraVez{
+            self.iniciaJugada()
+        }
     }
     
     @IBAction func oprimiVerde(sender: AnyObject) {
         self.botonVerde.backgroundColor = UIColor.whiteColor()
         self.juegoLocal.append("verde")
+        if self.primeraVez{
+            self.iniciaJugada()
+        }
     }
     
     @IBAction func oprimiAzul(sender: AnyObject) {
         self.botonAzul.backgroundColor = UIColor.whiteColor()
         self.juegoLocal.append("azul")
+        if self.primeraVez{
+            self.iniciaJugada()
+        }
     }
     
     @IBAction func oprimiAmarillo(sender: AnyObject) {
         self.botonAmarillo.backgroundColor = UIColor.whiteColor()
         self.juegoLocal.append("amarillo")
+        if self.primeraVez{
+            self.iniciaJugada()
+        }
     }
     
     func validaArreglo(){
@@ -83,6 +95,23 @@ class JuegoViewController: UIViewController {
                 //Hacer el pop de la vista
                 self.navigationController?.popToRootViewControllerAnimated(true)
             }
+        }
+    }
+    
+    func iniciaJugada(){
+        self.movimientos++
+        if self.movimientos > self.limiteMovimientos {
+            var obj = PFObject(withoutDataWithClassName: "Partidas", objectId: self.partida)
+            obj["partida"] = self.juegoLocal
+            obj["primeraVez"] = false
+            obj["turno"] = self.idContrincante
+            obj["estaActiva"] = true
+            //var query = PFQuery(className: "Partidas")
+            //query.whereKey("objectId", equalTo: self.partida)
+            //let result = query.findObjects()
+            obj.saveInBackground()
+            println(self.juegoLocal)
+            self.navigationController?.popToRootViewControllerAnimated(true)
         }
     }
     

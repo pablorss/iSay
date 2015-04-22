@@ -11,7 +11,7 @@ import UIKit
 class MenuPartidasViewController: UITableViewController {
     
 
-    
+    //var username = ""
     var data : [NSDictionary] = []
     var partidasAmigos : [String] = []
     var nombresAmigos : [String] = []
@@ -28,6 +28,17 @@ class MenuPartidasViewController: UITableViewController {
         
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        /*if  PFUser. {
+            self.amigosFB()
+            self.llenarTabla()
+        }*/
+        println("Hola")
+        self.amigosFB()
+        self.llenarTabla()
+        
+    }
+    
+    func amigosFB() {
         var friendsRequest : FBRequest = FBRequest.requestForMyFriends()
         friendsRequest.startWithCompletionHandler{(connection:FBRequestConnection!, result:AnyObject!, error:NSError!) -> Void in
             var resultdict = result as NSDictionary
@@ -47,8 +58,6 @@ class MenuPartidasViewController: UITableViewController {
             self.tableView.reloadData()
             println(self.partidasAmigos)
         }
-        self.llenarTabla()
-        
     }
     
     func llenarTabla(){
@@ -59,6 +68,7 @@ class MenuPartidasViewController: UITableViewController {
         var query = PFQuery(className: "Registro")
         query.whereKey("username", equalTo: self.idMio)
         let r2 = query.findObjects()
+        println(r2)
         
     }
     

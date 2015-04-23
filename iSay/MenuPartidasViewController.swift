@@ -16,6 +16,7 @@ class MenuPartidasViewController: UITableViewController {
     var partidasAmigos : [String] = []
     var nombresAmigos : [String] = []
     var idMio : String = ""
+    var login : Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,31 +34,19 @@ class MenuPartidasViewController: UITableViewController {
             self.llenarTabla()
         }*/
         println("Hola")
-        self.amigosFB()
-        self.llenarTabla()
+        sleep(1)
+        //if self.login{
+            //self.amigosFB()
+        if self.login {
+            self.llenarTabla()
+        }
         
     }
     
-    func amigosFB() {
-        var friendsRequest : FBRequest = FBRequest.requestForMyFriends()
-        friendsRequest.startWithCompletionHandler{(connection:FBRequestConnection!, result:AnyObject!, error:NSError!) -> Void in
-            var resultdict = result as NSDictionary
-            //println("Result Dict: \(resultdict)")
-            var data  = resultdict.objectForKey("data") as NSArray
-            //println(data)
-            var i = 0
-            while (i < data.count) {
-                let valueDict : NSDictionary = data[i] as NSDictionary
-                let name = valueDict.objectForKey("name") as NSString
-                let id = valueDict.objectForKey("id") as NSString
-                self.partidasAmigos.append(id)
-                self.nombresAmigos.append(name)
-                i++
-            }
-            //println(self.partidasAmigos)
-            self.tableView.reloadData()
-            println(self.partidasAmigos)
-        }
+    override func viewDidAppear(animated: Bool) {
+        self.nombresAmigos = []
+        self.partidasAmigos = []
+        self.llenarTabla()
     }
     
     func llenarTabla(){
@@ -69,6 +58,15 @@ class MenuPartidasViewController: UITableViewController {
         query.whereKey("username", equalTo: self.idMio)
         let r2 = query.findObjects()
         println(r2)
+        for object in r2 {
+            var contrincante = object["contrincante"] as String
+            var search = PFQuery(className: "FacebookData")
+            search.whereKey("idFacebook", equalTo: contrincante)
+            let result = search.findObjects()
+            self.nombresAmigos.append(result[0].objectForKey("nombre") as String)
+            self.partidasAmigos.append(contrincante)
+            self.tableView.reloadData()
+        }
         
     }
     

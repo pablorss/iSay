@@ -49,6 +49,7 @@ class ViewController: UIViewController {
                         //var timer = NSTimer.scheduledTimerWithTimeInterval(0.4, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
                         sleep(3)
                         self.performSegueWithIdentifier("login", sender: self)
+                        //self.navigationController?.pushViewController(MenuPartidasViewController, animated: true)
                     })
                     //let defaults = NSUserDefaults.standardUserDefaults()
                     //defaults.setBool(true,forKey:"signedup")
@@ -56,7 +57,9 @@ class ViewController: UIViewController {
 
                 } else {
                     NSLog("User with facebook logged in!");
-                    //self.performSegueWithIdentifier("login", sender: self)
+                    self.performSegueWithIdentifier("login", sender: self)
+                    //self.navigationController?.pushViewController(MenuPartidasViewController, animated: true)
+
                 }
             } })
     }

@@ -131,6 +131,25 @@ class JuegoViewController: UIViewController {
         self.limiteMovimientos = jugada[0].objectForKey("movimientos") as Int
         self.turno = jugada[0].objectForKey("turno") as String
         self.primeraVez = jugada[0].objectForKey("primeraVez") as Bool
+        //self.juegoArray = jugada[0].objectForKey("partida") as [String]
+        if self.turno != self.idMio {
+            //NO ES MI TURNO
+            var alert = UIAlertController(title: "No es tu turno", message: "Espera a que tu contrincante responda el juego", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+            self.navigationController?.popToRootViewControllerAnimated(true)
+        }
+        else{
+            //SI ES MI TURNO
+            if self.estaActiva {
+                //EL JUEGO SE ESTA LLEVANDO A CABO
+                
+                //RECREAR LA JUGADA
+            }
+            else {
+                //YA SE ACABO EL JUEGO
+            }
+        }
         /*if !self.primeraVez {
             self.juegoArray = jugada[0].objectForKey("partida") as [String]
         }*/
@@ -151,6 +170,7 @@ class JuegoViewController: UIViewController {
         let result = query.findObjects()
         //self.partida = result["partida"] as String
         self.partida = result[0].objectForKey("partida") as NSString
+        println(self.partida)
     }
     
 

@@ -34,19 +34,23 @@ class MenuPartidasViewController: UITableViewController {
             self.llenarTabla()
         }*/
         println("Hola")
-        sleep(1)
+        sleep(4)
+        self.login = true
+
         //if self.login{
-            //self.amigosFB()
-        if self.login {
-            self.llenarTabla()
-        }
+            //self.amigosFB(
+        println("me cargue")
         
     }
     
     override func viewDidAppear(animated: Bool) {
         self.nombresAmigos = []
         self.partidasAmigos = []
-        self.llenarTabla()
+        //self.llenarTabla()
+        if self.login {
+            self.llenarTabla()
+        }
+        //self.viewDidLoad()
     }
     
     func llenarTabla(){

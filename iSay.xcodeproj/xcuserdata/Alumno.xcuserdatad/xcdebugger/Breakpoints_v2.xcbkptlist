@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iSay/MenuPartidasViewController.swift"
-            timestampString = "451437384.954786"
+            timestampString = "451524278.459899"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
             landmarkName = "llenarTabla()"
             landmarkType = "5">
          </BreakpointContent>
@@ -26,12 +26,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "JuegoViewController.swift"
-            timestampString = "451425573.947395"
+            timestampString = "451603498.640041"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "160"
-            endingLineNumber = "160"
-            landmarkName = "buscarPartida()"
+            startingLineNumber = "179"
+            endingLineNumber = "179"
+            landmarkName = "recrearJugada()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

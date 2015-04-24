@@ -131,7 +131,7 @@ class JuegoViewController: UIViewController {
         self.limiteMovimientos = jugada[0].objectForKey("movimientos") as Int
         self.turno = jugada[0].objectForKey("turno") as String
         self.primeraVez = jugada[0].objectForKey("primeraVez") as Bool
-        //self.juegoArray = jugada[0].objectForKey("partida") as [String]
+        self.juegoArray = jugada[0].objectForKey("partida") as [String]
         if self.turno != self.idMio {
             //NO ES MI TURNO
             var alert = UIAlertController(title: "No es tu turno", message: "Espera a que tu contrincante responda el juego", preferredStyle: UIAlertControllerStyle.Alert)
@@ -141,14 +141,6 @@ class JuegoViewController: UIViewController {
         }
         else{
             //SI ES MI TURNO
-            if self.estaActiva {
-                //EL JUEGO SE ESTA LLEVANDO A CABO
-                
-                //RECREAR LA JUGADA
-            }
-            else {
-                //YA SE ACABO EL JUEGO
-            }
         }
         /*if !self.primeraVez {
             self.juegoArray = jugada[0].objectForKey("partida") as [String]
@@ -157,7 +149,77 @@ class JuegoViewController: UIViewController {
         
         // Do any additional setup after loading the view.
     }
+    
+    override func viewDidAppear(animated: Bool) {
+        println(self.estaActiva)
+        if self.estaActiva {
+            //EL JUEGO SE ESTA LLEVANDO A CABO
+            //RECREAR LA JUGADA
+            self.recrearJugada()
+            println("recrearJugada")
+            println(self.juegoArray)
+        }
 
+    }
+    
+    func fadeButtonTouchDown(sender: UIButton) {
+        sender.highlighted = false
+        UIView.animateWithDuration(1.5,
+            delay: 0,
+            options: .CurveLinear & .AllowUserInteraction & .BeginFromCurrentState,
+            animations: {
+                sender.alpha = 0
+            }, completion: nil)
+    }
+    
+    func fadeButtonTouchUpInside(sender: UIButton) {
+        sender.highlighted = true
+    }
+    
+    func recrearJugada() {
+        for var i = 0; i < self.juegoArray.count; i++ {
+            switch (self.juegoArray[i]){
+            case "rojo":
+                //Animación del boton rojo
+                //self.botonRojo.backgroundColor = UIColor.whiteColor()
+                self.fadeButtonTouchDown(self.botonRojo)
+                sleep(1)
+                self.fadeButtonTouchUpInside(self.botonRojo)
+                //self.botonRojo.backgroundColor = UIColor.redColor()
+                break
+            case "amarillo":
+                //Animacion del boton amarillo
+                //self.botonAmarillo.backgroundColor = UIColor.whiteColor()
+                self.fadeButtonTouchDown(self.botonAmarillo)
+                //sleep(1)
+                self.fadeButtonTouchUpInside(self.botonAmarillo)
+
+                //self.botonAmarillo.backgroundColor = UIColor.yellowColor()
+                break
+            case "azul":
+                //Animacion del boton azul
+                //self.botonAzul.backgroundColor = UIColor.whiteColor()
+                self.fadeButtonTouchDown(self.botonAzul)
+                //sleep(1)
+                self.fadeButtonTouchUpInside(self.botonAzul)
+
+                //self.botonAzul.backgroundColor = UIColor.blueColor()
+                break
+            case "verde":
+                //Animacion del boton verde
+                //self.botonVerde.backgroundColor = UIColor.whiteColor()
+                self.fadeButtonTouchDown(self.botonVerde)
+                //sleep(1)
+                self.fadeButtonTouchUpInside(self.botonVerde)
+
+                //self.botonVerde.backgroundColor = UIColor.greenColor()
+                break
+            default :
+                break
+            }
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

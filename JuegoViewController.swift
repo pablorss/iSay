@@ -87,14 +87,43 @@ class JuegoViewController: UIViewController {
     }
     
     func validaArreglo(){
-        if self.juegoLocal[self.movimientos] == self.juegoLocal[self.movimientos] {
-            self.movimientos++
-            if self.movimientos > self.limiteMovimientos {
-                //Crear alerta de que se termino el juego
-                println(self.juegoLocal)
-                //Hacer el pop de la vista
+        if self.movimientos < self.limiteMovimientos {
+            //El juego sigue
+            if self.juegoLocal[self.movimientos] == self.juegoArray[self.movimientos] {
+                self.movimientos++
+            }
+            else {
+                var obj = PFObject(withoutDataWithClassName: "Partidas", objectId: self.partida)
+                obj["primeraVez"] = true
+                obj["movimientos"] = 3
+                obj.saveInBackground()
+                var alert = UIAlertController(title: "Has perdido", message: "Si quieres volver a jugar selecciona a tu adversario", preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+                self.presentViewController(alert, animated: true, completion: nil)
                 self.navigationController?.popToRootViewControllerAnimated(true)
             }
+        }
+        else {
+            //El juego ha terminado
+            var obj = PFObject(withoutDataWithClassName: "Partidas", objectId: self.partida)
+            obj["partida"] = self.juegoLocal
+            obj["primeraVez"] = false
+            obj["turno"] = self.idContrincante
+            obj["movimientos"] = self.limiteMovimientos
+            var query = PFQuery(className: "FacebookData")
+            query.whereKey("idFacebook", equalTo: self.idContrincante)
+            let result = query.findObjects()
+            var obId = result[0].objectForKey("objectId") as String
+            var ganadas = result[0].objectForKey("ganadas") as Int
+            var obj2 = PFObject(withoutDataWithClassName: "FacebookData", objectId: obId)
+            obj2["ganadas"] = ganadas + 1
+            obj2.saveInBackground()
+            //var query = PFQuery(className: "Partidas")
+            //query.whereKey("objectId", equalTo: self.partida)
+            //let result = query.findObjects()
+            obj.saveInBackground()
+            //println(self.juegoLocal)
+            self.navigationController?.popToRootViewControllerAnimated(true)
         }
     }
     
@@ -106,11 +135,12 @@ class JuegoViewController: UIViewController {
             obj["primeraVez"] = false
             obj["turno"] = self.idContrincante
             obj["estaActiva"] = true
+            obj["movimientos"] = self.limiteMovimientos
             //var query = PFQuery(className: "Partidas")
             //query.whereKey("objectId", equalTo: self.partida)
             //let result = query.findObjects()
             obj.saveInBackground()
-            println(self.juegoLocal)
+            //println(self.juegoLocal)
             self.navigationController?.popToRootViewControllerAnimated(true)
         }
     }
@@ -128,16 +158,23 @@ class JuegoViewController: UIViewController {
         //query.getObjectWithId(self.partida)
         let jugada = query.findObjects()
         self.estaActiva = jugada[0].objectForKey("estaActiva") as Bool
-        self.limiteMovimientos = jugada[0].objectForKey("movimientos") as Int
+        self.limiteMovimientos = jugada[0].objectForKey("movimientos") as Int + 1
+        println(self.limiteMovimientos)
         self.turno = jugada[0].objectForKey("turno") as String
         self.primeraVez = jugada[0].objectForKey("primeraVez") as Bool
+        println(self.primeraVez)
         self.juegoArray = jugada[0].objectForKey("partida") as [String]
-        if self.turno != self.idMio {
-            //NO ES MI TURNO
-            var alert = UIAlertController(title: "No es tu turno", message: "Espera a que tu contrincante responda el juego", preferredStyle: UIAlertControllerStyle.Alert)
-            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
-            self.presentViewController(alert, animated: true, completion: nil)
-            self.navigationController?.popToRootViewControllerAnimated(true)
+        
+        if !self.primeraVez{
+            
+            if self.turno != self.idMio {
+                //NO ES MI TURNO
+                var alert = UIAlertController(title: "No es tu turno", message: "Espera a que tu contrincante responda el juego", preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+                self.presentViewController(alert, animated: true, completion: nil)
+                self.navigationController?.popToRootViewControllerAnimated(true)
+            }
+            
         }
         else{
             //SI ES MI TURNO
@@ -149,18 +186,18 @@ class JuegoViewController: UIViewController {
         
         // Do any additional setup after loading the view.
     }
-    
+    /*
     override func viewDidAppear(animated: Bool) {
-        println(self.estaActiva)
+        //println(self.estaActiva)
         if self.estaActiva {
             //EL JUEGO SE ESTA LLEVANDO A CABO
             //RECREAR LA JUGADA
-            self.recrearJugada()
-            println("recrearJugada")
-            println(self.juegoArray)
+            //self.recrearJugada()
+            //println("recrearJugada")
+            //println(self.juegoArray)
         }
 
-    }
+    }*/
     
     func fadeButtonTouchDown(sender: UIButton) {
         sender.highlighted = false
@@ -232,7 +269,7 @@ class JuegoViewController: UIViewController {
         let result = query.findObjects()
         //self.partida = result["partida"] as String
         self.partida = result[0].objectForKey("partida") as NSString
-        println(self.partida)
+        //println(self.partida)
     }
     
 

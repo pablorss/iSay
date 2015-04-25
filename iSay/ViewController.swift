@@ -44,10 +44,11 @@ class ViewController: UIViewController {
                         faceData["nombre"] = name
                         faceData["idFacebook"] = id
                         faceData["usuario"] = PFUser.currentUser().username
+                        faceData["ganadas"] = 0
                         user.saveInBackground()
                         faceData.saveInBackground()
                         //var timer = NSTimer.scheduledTimerWithTimeInterval(0.4, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
-                        sleep(3)
+                        sleep(1)
                         self.performSegueWithIdentifier("login", sender: self)
                         //self.navigationController?.pushViewController(MenuPartidasViewController, animated: true)
                     })

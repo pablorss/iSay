@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "JuegoViewController.swift"
-            timestampString = "451603498.640041"
+            timestampString = "451617302.793079"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "179"
-            endingLineNumber = "179"
+            startingLineNumber = "214"
+            endingLineNumber = "214"
             landmarkName = "recrearJugada()"
             landmarkType = "5">
          </BreakpointContent>

@@ -34,7 +34,7 @@ class MenuPartidasViewController: UITableViewController {
             self.llenarTabla()
         }*/
         println("Hola")
-        sleep(4)
+        sleep(1)
         self.login = true
 
         //if self.login{

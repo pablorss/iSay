@@ -140,6 +140,7 @@ class SeleccionarAmigoView: UITableViewController {
             partida["primeraVez"] = true
             partida["turno"] = idplayer1
             partida["movimientos"] = 4
+            partida["partida"] = []
             partida.save()
 
             println(partida.objectId)

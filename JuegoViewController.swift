@@ -93,7 +93,7 @@ class JuegoViewController: UIViewController {
                 self.movimientos++
             }
             else {
-                var obj = PFObject(withoutDataWithClassName: "Partidas", objectId: self.partida)
+                var obj = PFObject(withoutDataWithClassName: "Partidas", objectId: self.partida as String)
                 obj["primeraVez"] = true
                 obj["movimientos"] = 3
                 obj.saveInBackground()
@@ -105,7 +105,7 @@ class JuegoViewController: UIViewController {
         }
         else {
             //El juego ha terminado
-            var obj = PFObject(withoutDataWithClassName: "Partidas", objectId: self.partida)
+            var obj = PFObject(withoutDataWithClassName: "Partidas", objectId: self.partida as String)
             obj["partida"] = self.juegoLocal
             obj["primeraVez"] = false
             obj["turno"] = self.idContrincante
@@ -113,8 +113,8 @@ class JuegoViewController: UIViewController {
             var query = PFQuery(className: "FacebookData")
             query.whereKey("idFacebook", equalTo: self.idContrincante)
             let result = query.findObjects()
-            var obId = result[0].objectForKey("objectId") as String
-            var ganadas = result[0].objectForKey("ganadas") as Int
+            var obId = result[0].objectForKey("objectId") as! String
+            var ganadas = result[0].objectForKey("ganadas") as! Int
             var obj2 = PFObject(withoutDataWithClassName: "FacebookData", objectId: obId)
             obj2["ganadas"] = ganadas + 1
             obj2.saveInBackground()
@@ -130,7 +130,7 @@ class JuegoViewController: UIViewController {
     func iniciaJugada(){
         self.movimientos++
         if self.movimientos > self.limiteMovimientos {
-            var obj = PFObject(withoutDataWithClassName: "Partidas", objectId: self.partida)
+            var obj = PFObject(withoutDataWithClassName: "Partidas", objectId: self.partida as String)
             obj["partida"] = self.juegoLocal
             obj["primeraVez"] = false
             obj["turno"] = self.idContrincante
@@ -157,13 +157,13 @@ class JuegoViewController: UIViewController {
         query.whereKey("objectId", equalTo: self.partida)
         //query.getObjectWithId(self.partida)
         let jugada = query.findObjects()
-        self.estaActiva = jugada[0].objectForKey("estaActiva") as Bool
-        self.limiteMovimientos = jugada[0].objectForKey("movimientos") as Int + 1
+        self.estaActiva = jugada[0].objectForKey("estaActiva") as! Bool
+        self.limiteMovimientos = jugada[0].objectForKey("movimientos") as! Int + 1
         println(self.limiteMovimientos)
-        self.turno = jugada[0].objectForKey("turno") as String
-        self.primeraVez = jugada[0].objectForKey("primeraVez") as Bool
+        self.turno = jugada[0].objectForKey("turno") as! String
+        self.primeraVez = jugada[0].objectForKey("primeraVez") as! Bool
         println(self.primeraVez)
-        self.juegoArray = jugada[0].objectForKey("partida") as [String]
+        self.juegoArray = jugada[0].objectForKey("partida") as! [String]
         
         if !self.primeraVez{
             
@@ -268,7 +268,7 @@ class JuegoViewController: UIViewController {
         query.whereKey("contrincante", equalTo: self.idContrincante)
         let result = query.findObjects()
         //self.partida = result["partida"] as String
-        self.partida = result[0].objectForKey("partida") as NSString
+        self.partida = result[0].objectForKey("partida") as! NSString
         //println(self.partida)
     }
     

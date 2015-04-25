@@ -48,18 +48,18 @@ class SeleccionarAmigoView: UITableViewController {
     func facebookFriends() {
         var friendsRequest : FBRequest = FBRequest.requestForMyFriends()
         friendsRequest.startWithCompletionHandler{(connection:FBRequestConnection!, result:AnyObject!, error:NSError!) -> Void in
-            var resultdict = result as NSDictionary
-            var data  = resultdict.objectForKey("data") as NSArray
+            var resultdict = result as! NSDictionary
+            var data  = resultdict.objectForKey("data") as! NSArray
             var i = 0
             while (i < data.count) {
-                let valueDict : NSDictionary = data[i] as NSDictionary
-                let id = valueDict.objectForKey("id") as NSString
-                let name = valueDict.objectForKey("name") as NSString
+                let valueDict : NSDictionary = data[i] as! NSDictionary
+                let id = valueDict.objectForKey("id")as! NSString
+                let name = valueDict.objectForKey("name") as! NSString
                 
                 //Checar si los usuarios no tienen una partida con el jugador
                 
-                self.names.append(name)
-                self.ids.append(id)
+                self.names.append(name as String)
+                self.ids.append(id as String)
                 i++
             }
             self.tableView.reloadData()
@@ -88,7 +88,7 @@ class SeleccionarAmigoView: UITableViewController {
 
   
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
 
         // Configure the cell...
         cell.textLabel?.text = self.names[indexPath.row]
@@ -130,7 +130,7 @@ class SeleccionarAmigoView: UITableViewController {
         userInfo.whereKey("usuario", equalTo: user.username)
         let result : NSArray = userInfo.findObjects()
         for object in result {
-            idplayer1 = object.objectForKey("idFacebook") as NSString
+            idplayer1 = object.objectForKey("idFacebook") as! NSString as String
             self.id = self.ids[indexPath.row]
         }
         self.checarPartida(idplayer1 as NSString, row: indexPath.row as NSInteger)

@@ -15,7 +15,7 @@ class ViewController: UIViewController {
         var permissionsArray : NSArray = [ "user_about_me", "user_relationships", "user_birthday", "user_location", "user_friends"];
         
         // Login PFUser using Facebook
-        var login = PFFacebookUtils.logInWithPermissions(permissionsArray, block: { (user : PFUser!, error : NSError!) -> Void in
+        var login: Void = PFFacebookUtils.logInWithPermissions(permissionsArray as [AnyObject], block: { (user : PFUser!, error : NSError!) -> Void in
             if(user == nil){
                 var errorMessage : String?
                 if (error == nil){
@@ -34,9 +34,9 @@ class ViewController: UIViewController {
                     NSLog("User with facebook signed up and logged in!");
                     FBRequestConnection.startForMeWithCompletionHandler({connection, result, error in
                         //var user = PFUser.currentUser()
-                        var resultdict = result as NSDictionary
-                        var id = resultdict.objectForKey("id") as String
-                        var name = resultdict.objectForKey("name") as String
+                        var resultdict = result as! NSDictionary
+                        var id = resultdict.objectForKey("id") as! String
+                        var name = resultdict.objectForKey("name")as! String
                         var user = PFUser()
                         user.setObject(name, forKey: "nombre")
                         user.setObject(id, forKey: "idFacebook")

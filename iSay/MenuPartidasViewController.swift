@@ -57,17 +57,17 @@ class MenuPartidasViewController: UITableViewController {
         var user = PFQuery(className: "FacebookData")
         user.whereKey("usuario", equalTo: PFUser.currentUser().username)
         let r = user.findObjects()
-        self.idMio = r[0].objectForKey("idFacebook") as String
+        self.idMio = r[0].objectForKey("idFacebook") as! String
         var query = PFQuery(className: "Registro")
         query.whereKey("username", equalTo: self.idMio)
         let r2 = query.findObjects()
         println(r2)
         for object in r2 {
-            var contrincante = object["contrincante"] as String
+            var contrincante = object["contrincante"] as! String
             var search = PFQuery(className: "FacebookData")
             search.whereKey("idFacebook", equalTo: contrincante)
             let result = search.findObjects()
-            self.nombresAmigos.append(result[0].objectForKey("nombre") as String)
+            self.nombresAmigos.append(result[0].objectForKey("nombre") as! String)
             self.partidasAmigos.append(contrincante)
             self.tableView.reloadData()
         }
@@ -97,7 +97,7 @@ class MenuPartidasViewController: UITableViewController {
     
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
         
         // Configure the cell...
         cell.textLabel?.text = self.nombresAmigos[indexPath.row]
@@ -152,7 +152,7 @@ class MenuPartidasViewController: UITableViewController {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
         if segue.identifier == "juego" {
-            let detalleJuego = segue.destinationViewController as JuegoViewController
+            let detalleJuego = segue.destinationViewController as! JuegoViewController
             let indiceActual = self.tableView.indexPathForSelectedRow()
             let row = indiceActual?.row
             let idContrincante = self.partidasAmigos[row!]

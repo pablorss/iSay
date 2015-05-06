@@ -63,6 +63,7 @@ class ViewController: UIViewController {
 
                 }
             } })
+            
     }
     
 
@@ -75,12 +76,17 @@ class ViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        /*if(PFUser.currentUser().isAuthenticated() && PFFacebookUtils.isLinkedWithUser(PFUser.currentUser())) {
-            self.performSegueWithIdentifier("login", sender: self);
-        }
-        else {
         
-        }*/
+        var currentUser = PFUser.currentUser()
+        
+        if ((currentUser != nil) && (PFFacebookUtils.isLinkedWithUser(currentUser))) {
+            // Do stuff with the user
+            println("There is user logged with Facebook")
+        } else {
+            // Show the signup or login screen
+            println("There is not user logged")
+        }
+        
         
     }
 

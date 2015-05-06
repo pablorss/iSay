@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -13,17 +13,16 @@
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l25-8z-KvX">
-                                <rect key="frame" x="153" y="319" width="68" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l25-8z-KvX">
+                                <rect key="frame" x="266" y="270" width="68" height="30"/>
                                 <state key="normal" title="Facebook">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="facebookLogin:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="4Vb-xe-7qw"/>
-                                    <segue destination="CsT-2Z-uY5" kind="modal" identifier="login" id="3Ds-qt-EUV"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="iSay" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hec-hf-GLr">
@@ -40,18 +39,20 @@
                             <constraint firstAttribute="centerY" secondItem="l25-8z-KvX" secondAttribute="centerY" id="ux8-Ui-uDQ"/>
                         </constraints>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <segue destination="CsT-2Z-uY5" kind="presentation" id="c0a-31-Fbb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="149.33333333333334" y="319.02666666666664"/>
+            <point key="canvasLocation" x="280" y="336.99999999999994"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="Nb2-VV-vnr">
             <objects>
                 <tableViewController id="ec6-DH-wfG" customClass="MenuPartidasViewController" customModule="iSay" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="FnR-qM-AKs">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -61,7 +62,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="Fvl-Ga-oe8" kind="push" identifier="juego" id="s4q-GO-neZ"/>
+                                    <segue destination="Fvl-Ga-oe8" kind="show" identifier="juego" id="s4q-GO-neZ"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -74,14 +75,14 @@
                         <barButtonItem key="rightBarButtonItem" title="NJ" id="akV-m1-pm2">
                             <connections>
                                 <action selector="crearNuevaPartida:" destination="ec6-DH-wfG" id="r18-sV-a9N"/>
-                                <segue destination="1Ow-n2-tgo" kind="push" id="hly-dq-HPw"/>
+                                <segue destination="1Ow-n2-tgo" kind="show" id="hly-dq-HPw"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="th7-u9-S66" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1632" y="-31"/>
+            <point key="canvasLocation" x="3060" y="-32.746478873239433"/>
         </scene>
         <!--Juego View Controller-->
         <scene sceneID="mw7-L9-5LW">
@@ -92,7 +93,7 @@
                         <viewControllerLayoutGuide type="bottom" id="vkf-M3-m6D"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="rk9-vf-M1k">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x86-m6-nVi">
@@ -152,14 +153,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XH2-Xy-jnD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2161" y="467"/>
+            <point key="canvasLocation" x="4051.875" y="493.30985915492954"/>
         </scene>
         <!--Seleccionar Amigo View-->
         <scene sceneID="yV9-po-er0">
             <objects>
                 <tableViewController id="1Ow-n2-tgo" customClass="SeleccionarAmigoView" customModule="iSay" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="lgC-28-IjH">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -179,7 +180,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e2V-ST-fC5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2127" y="-238"/>
+            <point key="canvasLocation" x="3988.125" y="-251.40845070422534"/>
         </scene>
         <!--Partidas-->
         <scene sceneID="I1h-DP-nha">
@@ -196,7 +197,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9xF-eg-BPe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1092" y="-31"/>
+            <point key="canvasLocation" x="2047.5" y="-32.746478873239433"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="NYF-3e-4lm">
@@ -216,14 +217,14 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EuX-Q3-VR2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="589" y="319"/>
+            <point key="canvasLocation" x="1104.375" y="336.97183098591546"/>
         </scene>
         <!--Record-->
         <scene sceneID="PxO-Fm-Pre">
             <objects>
                 <tableViewController id="UhE-Gp-TJE" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="mJw-4i-45P">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -243,12 +244,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ha4-im-UeR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1109" y="681"/>
+            <point key="canvasLocation" x="2079.375" y="719.36619718309851"/>
         </scene>
     </scenes>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
-    </simulatedMetricsContainer>
 </document>

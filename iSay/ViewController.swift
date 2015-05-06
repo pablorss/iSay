@@ -48,8 +48,8 @@ class ViewController: UIViewController {
                         user.saveInBackground()
                         faceData.saveInBackground()
                         //var timer = NSTimer.scheduledTimerWithTimeInterval(0.4, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
-                        sleep(1)
-                        self.performSegueWithIdentifier("login", sender: self)
+                        //sleep(1)
+                        self.performSegueWithIdentifier("toTheGame", sender: self)
                         //self.navigationController?.pushViewController(MenuPartidasViewController, animated: true)
                     })
                     //let defaults = NSUserDefaults.standardUserDefaults()
@@ -58,7 +58,7 @@ class ViewController: UIViewController {
 
                 } else {
                     NSLog("User with facebook logged in!");
-                    self.performSegueWithIdentifier("login", sender: self)
+                    self.performSegueWithIdentifier("toTheGame", sender: self)
                     //self.navigationController?.pushViewController(MenuPartidasViewController, animated: true)
 
                 }
@@ -70,29 +70,42 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
-        // Do any additional setup after loading the view, typically from a nib.
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
-        var currentUser = PFUser.currentUser()
-        
-        if ((currentUser != nil) && (PFFacebookUtils.isLinkedWithUser(currentUser))) {
-            // Do stuff with the user
-            println("There is user logged with Facebook")
-        } else {
-            // Show the signup or login screen
-            println("There is not user logged")
-        }
-        
-        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func goToScreen(){
+         self.performSegueWithIdentifier("toTheGame", sender: self)
+        
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        var currentUser = PFUser.currentUser()
+        
+        if ((currentUser != nil) && (PFFacebookUtils.isLinkedWithUser(currentUser))) {
+            // Do stuff with the user
+            println("There is user logged with Facebook")
+            self.goToScreen()
+        } else {
+            // Show the signup or login screen
+            println("There is not user logged")
+        }
+
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == "toTheGame" {
+            let tabController = segue.destinationViewController as! UITabBarController
+            tabController.selectedIndex = 0
+        }
     }
 
 

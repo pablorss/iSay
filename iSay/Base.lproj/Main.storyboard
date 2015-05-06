@@ -40,7 +40,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <segue destination="CsT-2Z-uY5" kind="presentation" id="c0a-31-Fbb"/>
+                        <segue destination="CsT-2Z-uY5" kind="presentation" identifier="toTheGame" id="du0-iM-xA5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>

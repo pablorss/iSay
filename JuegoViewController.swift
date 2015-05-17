@@ -1,3 +1,4 @@
+
 //
 //  JuegoViewController.swift
 //  iSay
@@ -279,7 +280,7 @@ class JuegoViewController: UIViewController {
         self.botonRojo.backgroundColor = UIColor.redColor()
         self.botonVerde.backgroundColor = UIColor.greenColor()
 
-        if self.contTimer == self.limiteMovimientos {
+        if self.contTimer == self.limiteMovimientos-1{
             timer.invalidate()
             
         }

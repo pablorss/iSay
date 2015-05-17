@@ -53,7 +53,7 @@
             <objects>
                 <tableViewController id="ec6-DH-wfG" customClass="MenuPartidasViewController" customModule="iSay" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="FnR-qM-AKs">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -97,8 +97,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S3V-Ad-9yo">
-                                <rect key="frame" x="0.0" y="222" width="160" height="160"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S3V-Ad-9yo">
+                                <rect key="frame" x="0.0" y="227" width="157" height="157"/>
                                 <color key="backgroundColor" red="0.024988165874118895" green="0.081828687393511346" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="160" id="nnc-ls-eRZ"/>
@@ -112,8 +112,8 @@
                                     <action selector="solteAzul:" destination="Fvl-Ga-oe8" eventType="touchUpInside" id="Qjy-m2-Euk"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SP4-ng-8xY">
-                                <rect key="frame" x="157" y="222" width="160" height="160"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SP4-ng-8xY">
+                                <rect key="frame" x="163" y="227" width="157" height="157"/>
                                 <color key="backgroundColor" red="1" green="0.93968463601874563" blue="0.035122367110289821" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="160" id="Y5s-d7-ECm"/>
@@ -127,23 +127,8 @@
                                     <action selector="solteAmarillo:" destination="Fvl-Ga-oe8" eventType="touchUpInside" id="JvY-Bl-OVw"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q0O-Oo-tmi">
-                                <rect key="frame" x="157" y="64" width="160" height="160"/>
-                                <color key="backgroundColor" red="0.15547912856265986" green="0.8434738005050505" blue="0.061728898493015008" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="160" id="PEX-wV-VH9"/>
-                                    <constraint firstAttribute="height" constant="160" id="i8r-Dr-qKD"/>
-                                </constraints>
-                                <state key="normal">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="oprimiVerde:" destination="Fvl-Ga-oe8" eventType="touchDown" id="hGq-Mk-yOt"/>
-                                    <action selector="solteVerde:" destination="Fvl-Ga-oe8" eventType="touchUpInside" id="FTv-Gp-u9e"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x86-m6-nVi">
-                                <rect key="frame" x="0.0" y="64" width="160" height="160"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x86-m6-nVi">
+                                <rect key="frame" x="0.0" y="64" width="157" height="157"/>
                                 <color key="backgroundColor" red="1" green="0.037066020673091282" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="160" id="2Da-qE-24B"/>
@@ -163,6 +148,21 @@
                                 <connections>
                                     <action selector="oprimiRojo:" destination="Fvl-Ga-oe8" eventType="touchDown" id="HCq-aQ-mGE"/>
                                     <action selector="solteRojo:" destination="Fvl-Ga-oe8" eventType="touchUpInside" id="FRI-se-kdA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q0O-Oo-tmi">
+                                <rect key="frame" x="163" y="64" width="157" height="157"/>
+                                <color key="backgroundColor" red="0.15547912856265986" green="0.8434738005050505" blue="0.061728898493015008" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="160" id="PEX-wV-VH9"/>
+                                    <constraint firstAttribute="height" constant="160" id="i8r-Dr-qKD"/>
+                                </constraints>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="oprimiVerde:" destination="Fvl-Ga-oe8" eventType="touchDown" id="hGq-Mk-yOt"/>
+                                    <action selector="solteVerde:" destination="Fvl-Ga-oe8" eventType="touchUpInside" id="FTv-Gp-u9e"/>
                                 </connections>
                             </button>
                         </subviews>

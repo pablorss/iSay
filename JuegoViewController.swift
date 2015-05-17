@@ -99,21 +99,22 @@ class JuegoViewController: UIViewController {
                 var obj = PFObject(withoutDataWithClassName: "Partidas", objectId: self.partida as String)
                 obj["primeraVez"] = true
                 obj["movimientos"] = 3
-                obj.saveInBackground()
                 var query = PFQuery(className: "FacebookData")
-                query.whereKey("idFacebook", equalTo: self.idContrincante)
-                let result = query.findObjects()
-                var obId = result[0].objectForKey("objectId") as! String
-                var ganadas = result[0].objectForKey("ganadas") as! Int
-                var obj2 = PFObject(withoutDataWithClassName: "FacebookData", objectId: obId)
-                obj2["ganadas"] = ganadas + 1
-                obj2.saveInBackground()
+                query.whereKey("idFacebook", equalTo: self.idContrincante as String)
+                let result : PFObject! = query.getFirstObject()
+                println(result)
+                result.incrementKey("ganadas")
+                result.saveInBackground()
+                obj.saveInBackground()
+                /*var alert = UIAlertController(title: "Has perdido", message: "Si quieres volver a jugar selecciona a tu adversario", preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+                self.presentViewController(alert, animated: true, completion: nil)*/
+                self.navigationController?.popToRootViewControllerAnimated(true)
                 var alert = UIAlertController(title: "Has perdido", message: "Si quieres volver a jugar selecciona a tu adversario", preferredStyle: UIAlertControllerStyle.Alert)
                 alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
                 self.presentViewController(alert, animated: true, completion: nil)
-                self.navigationController?.popToRootViewControllerAnimated(true)
                 //segue to menu
-                self.performSegueWithIdentifier("ToMenu", sender:self)
+                //self.performSegueWithIdentifier("ToMenu", sender:self)
             }
         }
         else {
@@ -123,9 +124,6 @@ class JuegoViewController: UIViewController {
             obj["primeraVez"] = false
             obj["turno"] = self.idContrincante
             obj["movimientos"] = self.juegoLocal.count
-            //var query = PFQuery(className: "Partidas")
-            //query.whereKey("objectId", equalTo: self.partida)
-            //let result = query.findObjects()
             obj.saveInBackground()
             //println(self.juegoLocal)
             self.navigationController?.popToRootViewControllerAnimated(true)
@@ -174,15 +172,16 @@ class JuegoViewController: UIViewController {
             
             if self.turno != self.idMio {
                 //NO ES MI TURNO
+                self.navigationController?.popToRootViewControllerAnimated(true)
                 var alert = UIAlertController(title: "No es tu turno", message: "Espera a que tu contrincante responda el juego", preferredStyle: UIAlertControllerStyle.Alert)
                 alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
                 self.presentViewController(alert, animated: true, completion: nil)
-                self.navigationController?.popToRootViewControllerAnimated(true)
+            }
+            else{
+                //SI ES MI TURNO
+                timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: ("mostrarCadena"), userInfo: nil, repeats: true)
             }
             
-        }
-        else{
-            //SI ES MI TURNO
         }
         /*if !self.primeraVez {
             self.juegoArray = jugada[0].objectForKey("partida") as [String]
@@ -191,18 +190,6 @@ class JuegoViewController: UIViewController {
         
         // Do any additional setup after loading the view.
     }
-    /*
-    override func viewDidAppear(animated: Bool) {
-        //println(self.estaActiva)
-        if self.estaActiva {
-            //EL JUEGO SE ESTA LLEVANDO A CABO
-            //RECREAR LA JUGADA
-            //self.recrearJugada()
-            //println("recrearJugada")
-            //println(self.juegoArray)
-        }
-
-    }*/
     
     
     override func didReceiveMemoryWarning() {
@@ -210,14 +197,14 @@ class JuegoViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewDidAppear(animated: Bool) {
+    /*override func viewDidAppear(animated: Bool) {
         println(self.juegoArray)
         println(self.limiteMovimientos)
         if !self.primeraVez{
             timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: ("mostrarCadena"), userInfo: nil, repeats: true)
         }
         
-    }
+    }*/
     
     func mostrarCadena() {
         self.botonAmarillo.backgroundColor = UIColor.yellowColor()

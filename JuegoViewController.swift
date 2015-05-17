@@ -100,6 +100,14 @@ class JuegoViewController: UIViewController {
                 obj["primeraVez"] = true
                 obj["movimientos"] = 3
                 obj.saveInBackground()
+                var query = PFQuery(className: "FacebookData")
+                query.whereKey("idFacebook", equalTo: self.idContrincante)
+                let result = query.findObjects()
+                var obId = result[0].objectForKey("objectId") as! String
+                var ganadas = result[0].objectForKey("ganadas") as! Int
+                var obj2 = PFObject(withoutDataWithClassName: "FacebookData", objectId: obId)
+                obj2["ganadas"] = ganadas + 1
+                obj2.saveInBackground()
                 var alert = UIAlertController(title: "Has perdido", message: "Si quieres volver a jugar selecciona a tu adversario", preferredStyle: UIAlertControllerStyle.Alert)
                 alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
                 self.presentViewController(alert, animated: true, completion: nil)
@@ -112,15 +120,7 @@ class JuegoViewController: UIViewController {
             obj["partida"] = self.juegoLocal
             obj["primeraVez"] = false
             obj["turno"] = self.idContrincante
-            obj["movimientos"] = self.limiteMovimientos
-            var query = PFQuery(className: "FacebookData")
-            query.whereKey("idFacebook", equalTo: self.idContrincante)
-            let result = query.findObjects()
-            var obId = result[0].objectForKey("objectId") as! String
-            var ganadas = result[0].objectForKey("ganadas") as! Int
-            var obj2 = PFObject(withoutDataWithClassName: "FacebookData", objectId: obId)
-            obj2["ganadas"] = ganadas + 1
-            obj2.saveInBackground()
+            obj["movimientos"] = self.juegoLocal.count
             //var query = PFQuery(className: "Partidas")
             //query.whereKey("objectId", equalTo: self.partida)
             //let result = query.findObjects()
@@ -138,7 +138,7 @@ class JuegoViewController: UIViewController {
             obj["primeraVez"] = false
             obj["turno"] = self.idContrincante
             obj["estaActiva"] = true
-            obj["movimientos"] = self.limiteMovimientos
+            obj["movimientos"] = self.juegoLocal.count
             //var query = PFQuery(className: "Partidas")
             //query.whereKey("objectId", equalTo: self.partida)
             //let result = query.findObjects()
@@ -202,63 +202,6 @@ class JuegoViewController: UIViewController {
 
     }*/
     
-    func fadeButtonTouchDown(sender: UIButton) {
-        sender.highlighted = false
-        UIView.animateWithDuration(1.5,
-            delay: 0,
-            options: .CurveLinear & .AllowUserInteraction & .BeginFromCurrentState,
-            animations: {
-                sender.alpha = 0
-            }, completion: nil)
-    }
-    
-    func fadeButtonTouchUpInside(sender: UIButton) {
-        sender.highlighted = true
-    }
-    
-    func recrearJugada() {
-        for var i = 0; i < self.juegoArray.count; i++ {
-            switch (self.juegoArray[i]){
-            case "rojo":
-                //Animación del boton rojo
-                //self.botonRojo.backgroundColor = UIColor.whiteColor()
-                self.fadeButtonTouchDown(self.botonRojo)
-                sleep(1)
-                self.fadeButtonTouchUpInside(self.botonRojo)
-                //self.botonRojo.backgroundColor = UIColor.redColor()
-                break
-            case "amarillo":
-                //Animacion del boton amarillo
-                //self.botonAmarillo.backgroundColor = UIColor.whiteColor()
-                self.fadeButtonTouchDown(self.botonAmarillo)
-                //sleep(1)
-                self.fadeButtonTouchUpInside(self.botonAmarillo)
-
-                //self.botonAmarillo.backgroundColor = UIColor.yellowColor()
-                break
-            case "azul":
-                //Animacion del boton azul
-                //self.botonAzul.backgroundColor = UIColor.whiteColor()
-                self.fadeButtonTouchDown(self.botonAzul)
-                //sleep(1)
-                self.fadeButtonTouchUpInside(self.botonAzul)
-
-                //self.botonAzul.backgroundColor = UIColor.blueColor()
-                break
-            case "verde":
-                //Animacion del boton verde
-                //self.botonVerde.backgroundColor = UIColor.whiteColor()
-                self.fadeButtonTouchDown(self.botonVerde)
-                //sleep(1)
-                self.fadeButtonTouchUpInside(self.botonVerde)
-
-                //self.botonVerde.backgroundColor = UIColor.greenColor()
-                break
-            default :
-                break
-            }
-        }
-    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

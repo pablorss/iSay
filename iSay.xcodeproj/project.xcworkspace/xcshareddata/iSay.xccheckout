@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>164402A0-B4AC-4F50-A23A-BEE1587ABB77</string>
 	<key>IDESourceControlProjectName</key>
-	<string>iSay</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>6162064CF50D31D1B99CA46C14397EDF1573E366</key>
 		<string>https://github.com/pablorss/iSay.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>iSay.xcodeproj</string>
+	<string>iSay.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>6162064CF50D31D1B99CA46C14397EDF1573E366</key>

@@ -32,6 +32,8 @@ class ViewController: UIViewController {
             } else {
                 if (user.isNew) {
                     NSLog("User with facebook signed up and logged in!");
+                  
+                    
                     FBRequestConnection.startForMeWithCompletionHandler({connection, result, error in
                         //var user = PFUser.currentUser()
                         var resultdict = result as! NSDictionary

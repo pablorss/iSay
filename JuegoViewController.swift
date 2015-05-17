@@ -161,7 +161,7 @@ class JuegoViewController: UIViewController {
         //query.getObjectWithId(self.partida)
         let jugada = query.findObjects()
         self.estaActiva = jugada[0].objectForKey("estaActiva") as! Bool
-        self.limiteMovimientos = jugada[0].objectForKey("movimientos") as! Int + 1
+        self.limiteMovimientos = jugada[0].objectForKey("movimientos") as! Int
         println(self.limiteMovimientos)
         self.turno = jugada[0].objectForKey("turno") as! String
         self.primeraVez = jugada[0].objectForKey("primeraVez") as! Bool
@@ -223,7 +223,7 @@ class JuegoViewController: UIViewController {
         self.botonRojo.backgroundColor = UIColor.redColor()
         self.botonVerde.backgroundColor = UIColor.greenColor()
 
-        if self.contTimer == self.limiteMovimientos-1{
+        if self.contTimer == self.limiteMovimientos{
             timer.invalidate()
             
         }

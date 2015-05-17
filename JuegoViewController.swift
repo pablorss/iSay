@@ -267,7 +267,9 @@ class JuegoViewController: UIViewController {
     override func viewDidAppear(animated: Bool) {
         println(self.juegoArray)
         println(self.limiteMovimientos)
-        timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: ("mostrarCadena"), userInfo: nil, repeats: true)
+        if !self.primeraVez{
+            timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: ("mostrarCadena"), userInfo: nil, repeats: true)
+        }
         
     }
     

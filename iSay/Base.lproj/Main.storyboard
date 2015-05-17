@@ -13,11 +13,11 @@
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l25-8z-KvX">
-                                <rect key="frame" x="266" y="270" width="68" height="30"/>
+                                <rect key="frame" x="126" y="270" width="68" height="30"/>
                                 <state key="normal" title="Facebook">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -26,7 +26,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="iSay" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hec-hf-GLr">
-                                <rect key="frame" x="171" y="85" width="33" height="21"/>
+                                <rect key="frame" x="144" y="97" width="33" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -39,6 +39,7 @@
                             <constraint firstAttribute="centerY" secondItem="l25-8z-KvX" secondAttribute="centerY" id="ux8-Ui-uDQ"/>
                         </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <segue destination="CsT-2Z-uY5" kind="presentation" identifier="toTheGame" id="du0-iM-xA5"/>
                     </connections>
@@ -52,7 +53,7 @@
             <objects>
                 <tableViewController id="ec6-DH-wfG" customClass="MenuPartidasViewController" customModule="iSay" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="FnR-qM-AKs">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -93,10 +94,10 @@
                         <viewControllerLayoutGuide type="bottom" id="vkf-M3-m6D"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="rk9-vf-M1k">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x86-m6-nVi">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x86-m6-nVi">
                                 <rect key="frame" x="0.0" y="64" width="185" height="185"/>
                                 <color key="backgroundColor" red="1" green="0.037066020673091282" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal">
@@ -107,7 +108,7 @@
                                     <action selector="solteRojo:" destination="Fvl-Ga-oe8" eventType="touchUpInside" id="FRI-se-kdA"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S3V-Ad-9yo">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S3V-Ad-9yo">
                                 <rect key="frame" x="0.0" y="255" width="185" height="185"/>
                                 <color key="backgroundColor" red="0.024988165874118895" green="0.081828687393511346" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal">
@@ -118,7 +119,7 @@
                                     <action selector="solteAzul:" destination="Fvl-Ga-oe8" eventType="touchUpInside" id="Qjy-m2-Euk"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SP4-ng-8xY">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SP4-ng-8xY">
                                 <rect key="frame" x="190" y="255" width="185" height="185"/>
                                 <color key="backgroundColor" red="1" green="0.93968463601874563" blue="0.035122367110289821" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal">
@@ -129,7 +130,7 @@
                                     <action selector="solteAmarillo:" destination="Fvl-Ga-oe8" eventType="touchUpInside" id="JvY-Bl-OVw"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q0O-Oo-tmi">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q0O-Oo-tmi">
                                 <rect key="frame" x="190" y="64" width="185" height="185"/>
                                 <color key="backgroundColor" red="0.15547912856265986" green="0.8434738005050505" blue="0.061728898493015008" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal">
@@ -142,8 +143,20 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="q0O-Oo-tmi" secondAttribute="centerY" constant="127.5" id="3TW-LQ-Wna"/>
+                            <constraint firstAttribute="centerY" secondItem="x86-m6-nVi" secondAttribute="centerY" constant="127.5" id="B5A-Bd-8ga"/>
+                            <constraint firstAttribute="centerX" secondItem="q0O-Oo-tmi" secondAttribute="centerX" constant="-122.5" id="FMq-In-HYa"/>
+                            <constraint firstAttribute="centerY" secondItem="SP4-ng-8xY" secondAttribute="centerY" constant="-63.5" id="Kxd-yr-a6N"/>
+                            <constraint firstAttribute="centerY" secondItem="S3V-Ad-9yo" secondAttribute="centerY" constant="-63.5" id="ej4-E2-nFa"/>
+                            <constraint firstAttribute="centerX" secondItem="S3V-Ad-9yo" secondAttribute="centerX" constant="67.5" id="fLn-we-l3F"/>
+                            <constraint firstAttribute="centerX" secondItem="SP4-ng-8xY" secondAttribute="centerX" constant="-122.5" id="sD8-Ig-Obj"/>
+                            <constraint firstAttribute="centerX" secondItem="x86-m6-nVi" secondAttribute="centerX" constant="67.5" id="x3H-0z-BnT"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="c1V-fY-vkE"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="568"/>
                     <connections>
                         <outlet property="botonAmarillo" destination="SP4-ng-8xY" id="J61-rg-kDa"/>
                         <outlet property="botonAzul" destination="S3V-Ad-9yo" id="4V1-Gh-aXD"/>
@@ -160,7 +173,7 @@
             <objects>
                 <tableViewController id="1Ow-n2-tgo" customClass="SeleccionarAmigoView" customModule="iSay" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="lgC-28-IjH">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -224,7 +237,7 @@
             <objects>
                 <tableViewController id="UhE-Gp-TJE" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="mJw-4i-45P">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>

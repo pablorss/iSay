@@ -272,6 +272,11 @@ class JuegoViewController: UIViewController {
     }
     
     func mostrarCadena() {
+        self.botonAmarillo.backgroundColor = UIColor.yellowColor()
+        self.botonAzul.backgroundColor = UIColor.blueColor()
+        self.botonRojo.backgroundColor = UIColor.redColor()
+        self.botonVerde.backgroundColor = UIColor.greenColor()
+
         if self.contTimer == self.limiteMovimientos {
             timer.invalidate()
             
@@ -291,6 +296,7 @@ class JuegoViewController: UIViewController {
             }
             println(self.juegoArray[self.contTimer])
         }
+
         self.contTimer++
         
     }

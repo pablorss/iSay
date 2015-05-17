@@ -112,6 +112,8 @@ class JuegoViewController: UIViewController {
                 alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
                 self.presentViewController(alert, animated: true, completion: nil)
                 self.navigationController?.popToRootViewControllerAnimated(true)
+                //segue to menu
+                self.performSegueWithIdentifier("ToMenu", sender:self)
             }
         }
         else {

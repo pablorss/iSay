@@ -223,18 +223,19 @@
                         <outlet property="botonAzul" destination="S3V-Ad-9yo" id="4V1-Gh-aXD"/>
                         <outlet property="botonRojo" destination="x86-m6-nVi" id="WNB-Cn-Kj0"/>
                         <outlet property="botonVerde" destination="q0O-Oo-tmi" id="pps-AR-K0E"/>
+                        <segue destination="ec6-DH-wfG" kind="show" identifier="ToMenu" id="3w5-sh-lYO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XH2-Xy-jnD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4051" y="493"/>
+            <point key="canvasLocation" x="2444" y="-158"/>
         </scene>
         <!--Seleccionar Amigo View-->
         <scene sceneID="yV9-po-er0">
             <objects>
                 <tableViewController id="1Ow-n2-tgo" customClass="SeleccionarAmigoView" customModule="iSay" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="lgC-28-IjH">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -321,4 +322,7 @@
             <point key="canvasLocation" x="2079.375" y="719.36619718309851"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="3w5-sh-lYO"/>
+    </inferredMetricsTieBreakers>
 </document>

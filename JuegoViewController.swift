@@ -19,6 +19,8 @@ class JuegoViewController: UIViewController {
     var limiteMovimientos : Int = 0
     var juegoArray : [String] = []
     var juegoLocal : [String] = []
+    var timer = NSTimer()
+    var contTimer : Int = 0
     
 
     @IBOutlet weak var botonRojo: UIButton!
@@ -260,6 +262,41 @@ class JuegoViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        println(self.juegoArray)
+        println(self.limiteMovimientos)
+        timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: ("mostrarCadena"), userInfo: nil, repeats: true)
+        
+    }
+    
+    func mostrarCadena() {
+        println(self.juegoArray[self.contTimer])
+        self.botonAzul.backgroundColor = UIColor.blueColor()
+        self.botonAmarillo.backgroundColor = UIColor.yellowColor()
+        self.botonRojo.backgroundColor = UIColor.redColor()
+        self.botonVerde.backgroundColor = UIColor.greenColor()
+        self.contTimer++
+        if self.contTimer == self.limiteMovimientos {
+            timer.invalidate()
+            
+        }
+        else {
+            if self.juegoArray[self.contTimer] == "amarillo"{
+                self.botonAmarillo.backgroundColor = UIColor.whiteColor()
+            }
+            if self.juegoArray[self.contTimer] == "azul"{
+                self.botonAzul.backgroundColor = UIColor.whiteColor()
+            }
+            if self.juegoArray[self.contTimer] == "rojo"{
+                self.botonRojo.backgroundColor = UIColor.whiteColor()
+            }
+            if self.juegoArray[self.contTimer] == "verde"{
+                self.botonVerde.backgroundColor = UIColor.whiteColor()
+            }
+        }
+        
     }
     
     func buscarPartida(){

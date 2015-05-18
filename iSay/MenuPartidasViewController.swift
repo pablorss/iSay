@@ -142,5 +142,13 @@ class MenuPartidasViewController: UITableViewController {
         }
     }
     
+    @IBAction func logout(sender: AnyObject) {
+        
+        PFUser.logOut()
+        var currentUser = PFUser.currentUser()
+        if currentUser == nil {}
+        self.performSegueWithIdentifier("logout", sender: self)
+        
+    }
     
 }

@@ -99,6 +99,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Current Games" id="e0m-GG-zB2">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="nlw-Qf-Ltb">
+                            <connections>
+                                <action selector="logout:" destination="ec6-DH-wfG" id="SKG-eV-yxe"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="New game" id="akV-m1-pm2">
                             <connections>
                                 <action selector="crearNuevaPartida:" destination="ec6-DH-wfG" id="r18-sV-a9N"/>
@@ -106,10 +111,13 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="presentation" identifier="logout" id="930-Gz-Nca"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="th7-u9-S66" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3060" y="-32.746478873239433"/>
+            <point key="canvasLocation" x="274" y="-529"/>
         </scene>
         <!--Juego View Controller-->
         <scene sceneID="mw7-L9-5LW">
@@ -125,7 +133,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S3V-Ad-9yo">
                                 <rect key="frame" x="0.0" y="227" width="157" height="157"/>
-                                <color key="backgroundColor" red="0.024988165874118895" green="0.081828687393511346" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.20392156862745098" green="0.59607843137254901" blue="0.85882352941176465" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="160" id="nnc-ls-eRZ"/>
                                     <constraint firstAttribute="height" constant="160" id="sli-aM-JnO"/>
@@ -140,7 +148,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SP4-ng-8xY">
                                 <rect key="frame" x="163" y="227" width="157" height="157"/>
-                                <color key="backgroundColor" red="1" green="0.93968463601874563" blue="0.035122367110289821" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.94509803921568625" green="0.76862745098039209" blue="0.058823529411764705" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="160" id="Y5s-d7-ECm"/>
                                     <constraint firstAttribute="height" constant="160" id="q6X-8Q-nmQ"/>
@@ -155,7 +163,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x86-m6-nVi">
                                 <rect key="frame" x="0.0" y="64" width="157" height="157"/>
-                                <color key="backgroundColor" red="1" green="0.037066020673091282" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.90588235294117647" green="0.29803921568627451" blue="0.23529411764705882" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="160" id="2Da-qE-24B"/>
                                     <constraint firstAttribute="height" constant="160" id="IN2-3F-gWO"/>
@@ -178,7 +186,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q0O-Oo-tmi">
                                 <rect key="frame" x="163" y="64" width="157" height="157"/>
-                                <color key="backgroundColor" red="0.15547912856265986" green="0.8434738005050505" blue="0.061728898493015008" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.1803921568627451" green="0.80000000000000004" blue="0.44313725490196076" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="160" id="PEX-wV-VH9"/>
                                     <constraint firstAttribute="height" constant="160" id="i8r-Dr-qKD"/>
@@ -261,7 +269,7 @@
             <objects>
                 <tableViewController id="1Ow-n2-tgo" customClass="SeleccionarAmigoView" customModule="iSay" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="lgC-28-IjH">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -283,11 +291,11 @@
             </objects>
             <point key="canvasLocation" x="3988.125" y="-251.40845070422534"/>
         </scene>
-        <!--Partidas-->
+        <!--Games-->
         <scene sceneID="I1h-DP-nha">
             <objects>
                 <navigationController id="vKe-zR-0vB" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Partidas" id="SPU-0l-hJT"/>
+                    <tabBarItem key="tabBarItem" title="Games" id="SPU-0l-hJT"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="bjl-3J-bom">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -353,6 +361,6 @@
         <image name="iconBig.png" width="500" height="500"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="dju-b3-KH8"/>
+        <segue reference="3w5-sh-lYO"/>
     </inferredMetricsTieBreakers>
 </document>

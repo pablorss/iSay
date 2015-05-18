@@ -16,28 +16,54 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l25-8z-KvX">
-                                <rect key="frame" x="126" y="269" width="68" height="30"/>
-                                <state key="normal" title="Facebook">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="iconBig.png" translatesAutoresizingMaskIntoConstraints="NO" id="xt9-Ah-clw">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iSay!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xUX-Jv-b82">
+                                <rect key="frame" x="104" y="198" width="112" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="JUM-Br-3Zs"/>
+                                    <constraint firstAttribute="width" constant="112" id="qAl-fd-lUc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
+                                <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l25-8z-KvX">
+                                <rect key="frame" x="16" y="283" width="283" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="283" id="5oN-Vg-oUV"/>
+                                </constraints>
+                                <state key="normal" image="facebookLogin.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="5oN-Vg-oUV"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <action selector="facebookLogin:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="4Vb-xe-7qw"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="iSay" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hec-hf-GLr">
-                                <rect key="frame" x="144" y="97" width="33" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.56655310150000004" green="0.825687265" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="centerY" secondItem="hec-hf-GLr" secondAttribute="centerY" constant="154.5" id="Fsu-SA-n5E"/>
+                            <constraint firstAttribute="centerX" secondItem="xUX-Jv-b82" secondAttribute="centerX" id="FuM-VY-uAn"/>
                             <constraint firstAttribute="centerX" secondItem="l25-8z-KvX" secondAttribute="centerX" id="QJT-1e-Txm"/>
+                            <constraint firstAttribute="centerX" secondItem="xUX-Jv-b82" secondAttribute="centerX" id="akL-ht-5Hw"/>
+                            <constraint firstAttribute="centerY" secondItem="xUX-Jv-b82" secondAttribute="centerY" constant="58.5" id="b8O-mt-2Od"/>
+                            <constraint firstAttribute="centerY" secondItem="xUX-Jv-b82" secondAttribute="centerY" id="dFV-0h-so0"/>
+                            <constraint firstAttribute="centerX" secondItem="xUX-Jv-b82" secondAttribute="centerX" id="h61-Xe-9q5"/>
                             <constraint firstAttribute="centerY" secondItem="l25-8z-KvX" secondAttribute="centerY" id="ux8-Ui-uDQ"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="akL-ht-5Hw"/>
+                                <exclude reference="dFV-0h-so0"/>
+                                <exclude reference="h61-Xe-9q5"/>
+                            </mask>
+                        </variation>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
@@ -46,14 +72,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="280" y="336.99999999999994"/>
+            <point key="canvasLocation" x="280" y="336"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Current Games-->
         <scene sceneID="Nb2-VV-vnr">
             <objects>
                 <tableViewController id="ec6-DH-wfG" customClass="MenuPartidasViewController" customModule="iSay" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="FnR-qM-AKs">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -72,8 +98,8 @@
                             <outlet property="delegate" destination="ec6-DH-wfG" id="M0a-9g-L9f"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="e0m-GG-zB2">
-                        <barButtonItem key="rightBarButtonItem" title="NJ" id="akV-m1-pm2">
+                    <navigationItem key="navigationItem" title="Current Games" id="e0m-GG-zB2">
+                        <barButtonItem key="rightBarButtonItem" title="New game" id="akV-m1-pm2">
                             <connections>
                                 <action selector="crearNuevaPartida:" destination="ec6-DH-wfG" id="r18-sV-a9N"/>
                                 <segue destination="1Ow-n2-tgo" kind="show" id="hly-dq-HPw"/>
@@ -235,7 +261,7 @@
             <objects>
                 <tableViewController id="1Ow-n2-tgo" customClass="SeleccionarAmigoView" customModule="iSay" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="lgC-28-IjH">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -322,7 +348,11 @@
             <point key="canvasLocation" x="2079" y="719"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="facebookLogin.png" width="202" height="46"/>
+        <image name="iconBig.png" width="500" height="500"/>
+    </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="3w5-sh-lYO"/>
+        <segue reference="dju-b3-KH8"/>
     </inferredMetricsTieBreakers>
 </document>

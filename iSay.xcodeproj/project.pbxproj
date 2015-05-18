@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5BDEC0EF1B098F02001BD53F /* facebookLogin.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BDEC0EE1B098F02001BD53F /* facebookLogin.png */; };
+		5BDEC0F11B098F2F001BD53F /* title.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BDEC0F01B098F2F001BD53F /* title.png */; };
+		5BDEC0F31B099109001BD53F /* iconBig.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BDEC0F21B099109001BD53F /* iconBig.png */; };
 		6E103D2A1AD895680005BB4F /* JuegoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E103D291AD895670005BB4F /* JuegoViewController.swift */; };
 		6E27FC671AA6C0D600C047DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E27FC661AA6C0D600C047DD /* AppDelegate.swift */; };
 		6E27FC691AA6C0D600C047DD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E27FC681AA6C0D600C047DD /* ViewController.swift */; };
@@ -46,6 +49,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5BDEC0EE1B098F02001BD53F /* facebookLogin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebookLogin.png; sourceTree = "<group>"; };
+		5BDEC0F01B098F2F001BD53F /* title.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = title.png; sourceTree = "<group>"; };
+		5BDEC0F21B099109001BD53F /* iconBig.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconBig.png; sourceTree = "<group>"; };
 		6E103D291AD895670005BB4F /* JuegoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JuegoViewController.swift; path = ../JuegoViewController.swift; sourceTree = "<group>"; };
 		6E27FC611AA6C0D500C047DD /* iSay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iSay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E27FC651AA6C0D500C047DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -116,6 +122,9 @@
 		6E27FC581AA6C0D500C047DD = {
 			isa = PBXGroup;
 			children = (
+				5BDEC0EE1B098F02001BD53F /* facebookLogin.png */,
+				5BDEC0F01B098F2F001BD53F /* title.png */,
+				5BDEC0F21B099109001BD53F /* iconBig.png */,
 				6E27FCA01AA6D00A00C047DD /* Frameworks */,
 				6E27FC631AA6C0D500C047DD /* iSay */,
 				6E27FC791AA6C0D600C047DD /* iSayTests */,
@@ -280,8 +289,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E27FC6C1AA6C0D600C047DD /* Main.storyboard in Resources */,
+				5BDEC0F31B099109001BD53F /* iconBig.png in Resources */,
 				6E27FC711AA6C0D600C047DD /* LaunchScreen.xib in Resources */,
 				6E27FC6E1AA6C0D600C047DD /* Images.xcassets in Resources */,
+				5BDEC0EF1B098F02001BD53F /* facebookLogin.png in Resources */,
+				5BDEC0F11B098F2F001BD53F /* title.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -150,6 +150,8 @@ class JuegoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    
+        navigationController!.navigationBar.barTintColor = UIColor(red: 52/255, green: 152/255, blue: 219/255, alpha: 1)
         self.botonRojo.backgroundColor = UIColor.redColor()
         self.botonVerde.backgroundColor = UIColor.greenColor()
         self.botonAzul.backgroundColor = UIColor.blueColor()

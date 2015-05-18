@@ -20,22 +20,6 @@ class MenuPartidasViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //MARCA ERROR CUANDO ES LA PRIMERA PRIMERA VEZ QUE HAGO LOGIN
-        
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        /*if  PFUser. {
-            self.amigosFB()
-            self.llenarTabla()
-        }*/
-
-        //if self.login{
-            //self.amigosFB(
-        
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -44,6 +28,10 @@ class MenuPartidasViewController: UITableViewController {
         //self.llenarTabla()
         self.llenarTabla()
         //self.viewDidLoad()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        navigationController!.navigationBar.barTintColor = UIColor(red: 26/255, green: 188/255, blue: 156/255, alpha: 1)
     }
     
     func llenarTabla(){

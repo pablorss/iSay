@@ -30,6 +30,7 @@ class RecordTableViewController: UITableViewController {
         
     }
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         var friendsRequest : FBRequest = FBRequest.requestForMyFriends()
@@ -83,8 +84,8 @@ class RecordTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
 
         // Configure the cell...
-        cell.textLabel?.text = self.nombresAmigos[indexPath.row] as String
-        cell.detailTextLabel?.text = String(self.ganadasAmigos[indexPath.row]) as String
+        cell.textLabel?.text = String(self.ganadasAmigos[indexPath.row]) + " - " + self.nombresAmigos[indexPath.row] as String
+
 
         return cell
     }

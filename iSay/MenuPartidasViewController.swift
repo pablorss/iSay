@@ -16,7 +16,6 @@ class MenuPartidasViewController: UITableViewController {
     var partidasAmigos : [String] = []
     var nombresAmigos : [String] = []
     var idMio : String = ""
-    var login : Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,13 +32,9 @@ class MenuPartidasViewController: UITableViewController {
             self.amigosFB()
             self.llenarTabla()
         }*/
-        println("Hola")
-        sleep(1)
-        self.login = true
 
         //if self.login{
             //self.amigosFB(
-        println("me cargue")
         
     }
     
@@ -47,9 +42,7 @@ class MenuPartidasViewController: UITableViewController {
         self.nombresAmigos = []
         self.partidasAmigos = []
         //self.llenarTabla()
-        if self.login {
-            self.llenarTabla()
-        }
+        self.llenarTabla()
         //self.viewDidLoad()
     }
     
